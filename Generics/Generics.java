@@ -1,3 +1,4 @@
+package Generics;
 public class Generics<T> {
     T PrinterVal;
    Generics(T PrinterVal){
