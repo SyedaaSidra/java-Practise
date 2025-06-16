@@ -18,9 +18,9 @@ public class Task1 {
     
     public static void main (String[] args){
         PrintMemory("used memory before allocation ");
-        Task1 task=new Task1();
+        byte[] bigArray = new byte[100_000_00]; 
         PrintMemory(" used memory After allocation ");
-        task=null;
+       bigArray=null;
        PrintMemory(" used memory After deallocation ");
     }
 }
