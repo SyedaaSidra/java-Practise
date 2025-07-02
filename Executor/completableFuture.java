@@ -3,14 +3,20 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 public class completableFuture {
     public static void show(){
-        Runnable task=()-> System.out.println("runnable task");
-         Supplier<Integer> SupplyTask =()->1;
-       var future=  CompletableFuture.runAsync(task);
-       var supplyFuture=CompletableFuture.supplyAsync(SupplyTask);
-          supplyFuture.thenAccept(result ->{
-            System.out.println(result);
-          });
-
-          System.out.println("12345");
+     var future= CompletableFuture.supplyAsync(()->{
+        return 1;
+     });
+     future.thenAcceptAsync((result)->{
+        System.out.println(Thread.currentThread().getName());
+         System.out.println(result);
+      });
+//   try {
+//         Thread.sleep(5000);
+//     } catch (InterruptedException e) {
+   
+//         e.printStackTrace();
+//     }
+     
     }
+           
 }
